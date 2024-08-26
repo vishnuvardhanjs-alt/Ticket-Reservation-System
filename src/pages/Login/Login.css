@@ -7,7 +7,6 @@
 }
 
 .login-box {
-  /* min-width: 300px; */
   width: 40%;
   height: 40%;
   margin: 0 auto;
@@ -65,13 +64,23 @@
   max-width: 100px;
   border-radius: 20px;
 }
+a{
+  color: #007bff;
+}
 
 @media only screen and (max-width: 600px) {
     .login-cont{
-        flex-direction: column-reverse;
+        flex-direction: column;
+    }
+
+    .login-box{
+      width: 70%;
     }
 
     .login-img {
         max-width: 80%;
+      }
+      .login-art {
+        display: none;
       }
 }

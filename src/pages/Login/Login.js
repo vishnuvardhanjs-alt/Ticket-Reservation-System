@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import "./Login.css"
 import LoginImg from '../../assets/Login_art.png'
 import Logo from '../../assets/Logo.png'
@@ -6,12 +7,13 @@ import Logo from '../../assets/Logo.png'
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., send data to an API
     console.log('Email:', email);
     console.log('Password:', password);
+    navigate("/home");
   };
 
   return (
@@ -43,10 +45,13 @@ function Login() {
             <button type="submit" className="login-button">
               Login
             </button>
+            
           </form>
+          
         </div>
+        <p>Don't Have an Account? <a href="/signup">SignUp!</a></p>
       </div>
-      <img src={LoginImg} className='login-img' alt='LoginImage'></img>
+      <img src={LoginImg} className='login-img login-art' alt='LoginImage'></img>
     </div>
   );
 };
